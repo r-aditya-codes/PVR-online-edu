@@ -1,0 +1,67 @@
+/* General Setup */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Hind', sans-serif; background-color: #fcfcfc; color: #333; transition: 0.3s; }
+
+/* Language Switcher Button */
+.lang-switcher {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    z-index: 2000;
+}
+#langBtn {
+    padding: 8px 15px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.logo { font-size: 22px; font-weight: bold; color: #007bff; }
+.nav-links { list-style: none; display: flex; align-items: center; }
+.nav-links li { margin-left: 20px; }
+.nav-links a { text-decoration: none; color: #444; transition: 0.3s; }
+
+/* Sections */
+.hero {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #f0f4f8;
+    text-align: center;
+    padding: 20px;
+}
+.section-title { text-align: center; margin-top: 40px; }
+
+/* Cards */
+.teacher-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; padding: 40px 10%; }
+.card { background: white; padding: 20px; border-radius: 12px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-bottom: 4px solid #007bff; }
+
+/* Form */
+.form-container { max-width: 450px; margin: 40px auto; padding: 30px; background: white; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+input, textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 6px; }
+button[type="submit"] { width: 100%; padding: 12px; background: #28a745; color: white; border: none; cursor: pointer; border-radius: 6px; font-size: 16px; }
+
+/* Animations */
+.fade-in { animation: fadeIn 1s ease-in; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.slide-up { animation: slideUp 0.8s ease-out; }
+@keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }

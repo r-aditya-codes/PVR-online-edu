@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PVR ऑनलाइन एजुकेशन | PVR Online Education</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Hind:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="hindi-mode">
+
+    <div class="lang-switcher">
+        <button id="langBtn">Translate to English</button>
+    </div>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">PVR <span>Education</span></div>
+            <ul class="nav-links">
+                <li><a href="#home" class="lang" data-hi="होम" data-en="Home">होम</a></li>
+                <li><a href="class9.html" class="lang" data-hi="कक्षा 9" data-en="Class 9">कक्षा 9</a></li>
+                <li><a href="class10.html" class="lang" data-hi="कक्षा 10" data-en="Class 10">कक्षा 10</a></li>
+                <li><a href="class11.html" class="lang" data-hi="कक्षा 11" data-en="Class 11">कक्षा 11</a></li>
+                <li><a href="class12.html" class="lang" data-hi="कक्षा 12" data-en="Class 12">कक्षा 12</a></li>
+                <li><a href="#enroll" class="btn lang" data-hi="नामांकन" data-en="Enroll Now">नामांकन</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero fade-in">
+        <h1 class="lang" data-hi="PVR ऑनलाइन एजुकेशन में आपका स्वागत है" data-en="Welcome to PVR Online Education">PVR ऑनलाइन एजुकेशन में आपका स्वागत है</h1>
+        <p class="lang" data-hi="मानविकी, भौतिकी, गणित और रसायन विज्ञान के लिए विशेषज्ञ कोचिंग।" data-en="Expert coaching for Humanities, Physics, Maths, and Chemistry.">मानविकी, भौतिकी, गणित और रसायन विज्ञान के लिए विशेषज्ञ कोचिंग।</p>
+    </section>
+
+    <section class="teachers">
+        <h2 class="section-title lang" data-hi="हमारे विशेषज्ञ शिक्षक" data-en="Meet Our Experts">हमारे विशेषज्ञ शिक्षक</h2>
+        <div class="teacher-grid">
+            <div class="card slide-up">
+                <h3>Pawan Sir</h3>
+                <p class="lang" data-hi="मानविकी (Humanities)" data-en="Humanities Expert">मानविकी (Humanities)</p>
+            </div>
+            <div class="card slide-up">
+                <h3>Vikky Sir</h3>
+                <p class="lang" data-hi="भौतिक विज्ञान (Physics)" data-en="Physics Specialist">भौतिक विज्ञान (Physics)</p>
+            </div>
+            <div class="card slide-up">
+                <h3>Kishor Sir</h3>
+                <p class="lang" data-hi="गणित (Mathematics)" data-en="Mathematics Pro">गणित (Mathematics)</p>
+            </div>
+            <div class="card slide-up">
+                <h3>Sahabuddin Sir</h3>
+                <p class="lang" data-hi="रसायन विज्ञान (Chemistry)" data-en="Chemistry Wizard">रसायन विज्ञान (Chemistry)</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="enroll" class="form-section">
+        <div class="form-container">
+            <h2 class="lang" data-hi="छात्र नामांकन फॉर्म" data-en="Student Enrollment Form">छात्र नामांकन फॉर्म</h2>
+            <form id="studentForm">
+                <input type="text" name="name" id="nameField" placeholder="पूरा नाम" required>
+                <input type="tel" name="phone" id="phoneField" placeholder="फोन नंबर" required>
+                <textarea name="address" id="addressField" placeholder="आपका पता" required></textarea>
+                <button type="submit" id="submitBtn" class="lang" data-hi="जानकारी भेजें" data-en="Submit Details">जानकारी भेजें</button>
+            </form>
+            <div id="msg"></div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
