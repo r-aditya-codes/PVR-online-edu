@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 12 | PVR ऑनलाइन एजुकेशन</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Hind:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* कक्षा 12 के लिए विशेष स्टाइलिंग */
+        .subject-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px;
+            background: #fff;
+            position: sticky;
+            top: 70px;
+            z-index: 999;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            flex-wrap: wrap;
+        }
+        .sub-btn {
+            padding: 10px 20px;
+            border: 2px solid #007bff;
+            background: transparent;
+            color: #007bff;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .sub-btn:hover, .sub-btn.active {
+            background: #007bff;
+            color: white;
+        }
+        .content-section {
+            padding: 40px 10%;
+            display: none; /* शुरुआत में छुपे रहेंगे */
+        }
+        .content-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        .resource-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            margin: 20px 0;
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+        }
+        .doubt-box {
+            background: #e7f3ff;
+            padding: 20px;
+            border-left: 5px solid #007bff;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body class="hindi-mode">
+
+    <div class="lang-switcher">
+        <button id="langBtn">Translate to English</button>
+    </div>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">PVR <span>Class 12</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="lang" data-hi="मुख्य पृष्ठ" data-en="Home">मुख्य पृष्ठ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="subject-nav">
+        <button class="sub-btn active" onclick="showSubject('physics')">Physics (विकी सर)</button>
+        <button class="sub-btn" onclick="showSubject('chemistry')">Chemistry (शाहबुद्दीन सर)</button>
+        <button class="sub-btn" onclick="showSubject('maths')">Maths (किशोर सर)</button>
+        <button class="sub-btn" onclick="showSubject('humanities')">Humanities (पवन सर)</button>
+    </div>
+
+    <section id="physics" class="content-section active">
+        <h2 class="lang" data-hi="भौतिक विज्ञान - विकी सर द्वारा" data-en="Physics by Vikky Sir">भौतिक विज्ञान - विकी सर द्वारा</h2>
+        
+        <div class="resource-card">
+            <h3 class="lang" data-hi="वीडियो लेक्चर्स" data-en="Video Lectures">वीडियो लेक्चर्स</h3>
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/videoseries?list=YOUR_PHYSICS_PLAYLIST_ID" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="resource-card">
+            <h3 class="lang" data-hi="पीडीएफ नोट्स और पीपीटी" data-en="PDF Notes & PPT">पीडीएफ नोट्स और पीपीटी</h3>
+            <ul>
+                <li><a href="#">Chapter 1: Electric Charges (PDF)</a></li>
+                <li><a href="#">Formula Sheet (PPT)</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="chemistry" class="content-section">
+        <h2 class="lang" data-hi="रसायन विज्ञान - शाहबुद्दीन सर द्वारा" data-en="Chemistry by Sahabuddin Sir">रसायन विज्ञान - शाहबुद्दीन सर द्वारा</h2>
+        <div class="resource-card">
+            <h3 class="lang" data-hi="वीडियो लेक्चर्स" data-en="Video Lectures">वीडियो लेक्चर्स</h3>
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/videoseries?list=YOUR_CHEMISTRY_PLAYLIST_ID" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section active" style="padding-top: 0;">
+        <div class="doubt-box">
+            <h3 class="lang" data-hi="कोई संदेह है? (Doubt Section)" data-en="Have a Doubt?">कोई संदेह है? (Doubt Section)</h3>
+            <p class="lang" data-hi="हमारे कम्युनिटी ग्रुप से जुड़ें और अपने सवाल पूछें।" data-en="Join our community group and ask your questions.">हमारे कम्युनिटी ग्रुप से जुड़ें और अपने सवाल पूछें।</p>
+            <a href="YOUR_WHATSAPP_TELEGRAM_LINK" class="btn lang" data-hi="ग्रुप से जुड़ें" data-en="Join Group">ग्रुप से जुड़ें</a>
+        </div>
+    </section>
+
+    <script>
+        // Subject Switching Logic
+        function showSubject(subjectId) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            // Show selected section
+            document.getElementById(subjectId).classList.add('active');
+            
+            // Update button styles
+            document.querySelectorAll('.sub-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.currentTarget.classList.add('active');
+        }
+
+        // Language Logic (Same as index.html)
+        const langBtn = document.getElementById('langBtn');
+        let currentLang = 'hi';
+        langBtn.addEventListener('click', () => {
+            const elements = document.querySelectorAll('.lang');
+            if (currentLang === 'hi') {
+                elements.forEach(el => el.textContent = el.getAttribute('data-en'));
+                langBtn.textContent = "हिंदी में बदलें";
+                currentLang = 'en';
+            } else {
+                elements.forEach(el => el.textContent = el.getAttribute('data-hi'));
+                langBtn.textContent = "Translate to English";
+                currentLang = 'hi';
+            }
+        });
+    </script>
+</body>
+</html>
